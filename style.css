@@ -1,3 +1,6 @@
+body {
+    background: rgba(54, 53, 53, 0.692);
+}
 div {
     display: flex;
     justify-content: center;

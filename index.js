@@ -9,7 +9,7 @@ const secondCount = document.getElementById('saveSecondCount');
 const sumButton = document.getElementById('sum')
 
 
-const pushCount = []
+let pushCount = []
 
 const countObj = {
     count: 0
@@ -17,7 +17,7 @@ const countObj = {
 let sum = 0
 
 const incrementCount = () => {
-    counts.innerText = ++countObj.count
+    counts.innerText = countObj.count++
     decrementButton.style.display = 'block'
     console.log(countObj.count);
 }
@@ -30,7 +30,8 @@ const decrementCount =  () => {
     }   
 }
 const resetCount = () => {
-    counts.innerText = countObj.count = 0 
+    counts.innerText = countObj.count = 0
+    console.log(pushCount);
     console.log(countObj.count);
 }
 
@@ -42,9 +43,6 @@ const saveButton = () => {
 }
 
 const secondCountValue = () => {
-    // let sumCount = `Your result: ${countObj.count + countObj.count}`
-    // secondCount.innerText = sumCount
-    // console.log(sumCount);
     for (let i = 0; i < pushCount.length; i++) {
         sum = sum + pushCount[i]
     }

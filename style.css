@@ -1,0 +1,26 @@
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+h1 {
+    text-align: center;
+}
+p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+}
+button {
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+button:hover {
+    background: rgba(255, 255, 255, 0.429);
+    transition: all ease .3s;
+}

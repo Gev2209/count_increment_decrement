@@ -8,17 +8,21 @@
 </head>
 <body>
     <div>
-        <button id="increment" onclick="incrementCount()">INCREMENT</button>
+        <span class="line"></span><button id="increment" onclick="incrementCount()">INCREMENT</button>
+        <button id="decrement" onclick="decrementCount()">DECREMENT</button><span class="line"></span>
         <button id="reset" onclick="resetCount()">RESET</button>
-        <button id="sum" onclick="secondCountValue()">SUM</button>
+        <button id="sum" onclick="secondCountValue()">SUM</button><span class="line"></span>
         <button id="save" onclick="saveButton()">SAVE</button>
-        <button id="decrement" onclick="decrementCount()">DECREMENT</button>
+        <button id="delete" onclick="deleteCountLine()">DELETE</button><span class="line"></span>
+        <button id="delete" onclick="addCountLine()">ADD</button><span class="line"></span>
     </div>
     <h1>Current: <span id="count">0</span></h1>
     <hr>
     <p id="saveCount"></p>
     <hr>
-    <p id="saveSecondCount"></p>
+    <p id="saveSecondCount">
+        <hr>
+    </p>
     <script src="./index.js"></script>
 </body>
 </html>

@@ -6,7 +6,9 @@ const decrementButton = document.getElementById('decrement');
 const save = document.getElementById('save');
 const saveCount = document.getElementById('saveCount');
 const secondCount = document.getElementById('saveSecondCount');
-const sumButton = document.getElementById('sum')
+const sumButton = document.getElementById('sum');
+
+
 
 
 let pushCount = []
@@ -17,7 +19,7 @@ const countObj = {
 let sum = 0
 
 const incrementCount = () => {
-    counts.innerText = countObj.count++
+    counts.innerText = ++countObj.count
     decrementButton.style.display = 'block'
     console.log(countObj.count);
 }
@@ -31,14 +33,19 @@ const decrementCount =  () => {
 }
 const resetCount = () => {
     counts.innerText = countObj.count = 0
-    console.log(pushCount);
-    console.log(countObj.count);
+    pushCount = []
+    console.log(pushCount,'pushCount/resetCount');
+    console.log(countObj.count,'countObj.count/resetCount');
 }
 
 const saveButton = () => {
-    saveCount.innerText = `Your first number: ${countObj.count}`
-    pushCount.push(countObj.count)
-    console.log(pushCount);
+    if (countObj.count === 0) {
+        return
+    } else {
+        saveCount.innerText = `Your number: ${countObj.count}`
+        pushCount.push(countObj.count)
+        console.log(pushCount);
+    }
     // console.log(`"${countObj.count}"`);
 }
 
@@ -47,4 +54,24 @@ const secondCountValue = () => {
         sum = sum + pushCount[i]
     }
     secondCount.innerText = `Your result: ${sum}`
+}
+
+const deleteCountLine = () => {
+    saveCount.innerHTML = '';
+    pushCount = []
+    console.log(saveCount);
+    console.log(pushCount,'pushCount/deleteCountLine');
+}
+
+
+const addCountLine = () => {
+    for (let i = 0; i < pushCount.length; i++) {
+        const divField = document.createElement('div')
+        const hrField = document.createElement('hr')
+        divField.className = 'field'
+        divField.textContent = `Added ${countObj.count}`
+        const parentElement = document.body
+        parentElement.appendChild(divField);
+        parentElement.appendChild(hrField)
+      }
 }
